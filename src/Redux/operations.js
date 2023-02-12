@@ -13,26 +13,26 @@ export const fetchContacts = createAsyncThunk('contacts/fetchContacts',
     }
   }
 );
+
 export const deleteContact = createAsyncThunk('contacts/deleteContact',
     async (id, {rejectWithValue}) => {
         try {
             const response = await axios.delete(`/contacts/${id}`);
-            return response.data;
-       
-    } catch (e) {
+            return response.data; 
+        } catch (e) {
       return rejectWithValue(e.message);
     }
   }
+);
 
-)
 export const addContact = createAsyncThunk('contacts/addContact',
-    async (subscriber, { rejectWithValue }) => {
-        try {
-            const response = await axios.post(`/contacts`, subscriber);
-            return response.data;
+  async (subscriber, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(`/contacts`, subscriber);
+      return response.data;
             
     } catch (e) {
       return rejectWithValue(e.message);
     }
   }
-)
+);

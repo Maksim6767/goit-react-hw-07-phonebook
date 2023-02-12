@@ -23,7 +23,7 @@ export const App = () => {
         <h2>{error}</h2>
       ) : (
         <>
-          {' '}
+          {/* {' '} */}
           <h2>Contacts : {isLoading ? <Loader /> : items.length} </h2>
           {items.length === 0 && !isLoading ? (
             <h2>You have no contacts saved</h2>
